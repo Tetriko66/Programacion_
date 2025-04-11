@@ -1,0 +1,78 @@
+Saldo=10000
+op = 1
+contraseña=""
+contraseña1="1213"
+contraseña2="1415"
+contraseña3="1617"
+opc_retirar:0
+opc_depositar:0
+saldo_nuevo=0
+contraseña_nueva= 0
+mi_funcion=0
+rut=""
+rut1="21972090-4"
+rut2="11223344-5"
+rut3="22334455-6"
+
+
+print("Bienvenido al cajero Python")
+while True:
+     print("Por favor ingrese rut")
+     rut=input()
+     if rut!=rut1 or rut2 or rut3:
+          print("Error. Ingrese nuevamente")
+     print("Ingrese su contraseña")
+     contraseña=input()
+     if contraseña!=contraseña1 or contraseña2 or contraseña3:
+          print("Error.")
+     if rut==rut1 and contraseña==contraseña1 or rut==rut2 and contraseña==contraseña2 or rut==rut3 and contraseña==contraseña3:
+          print("Acceso concedido", rut)
+          break
+     else:
+          print("Error.")
+
+
+while op != 0:
+   print("Elija una opcion a realizar")
+   print("1) Consultar saldo")
+   print("2) Retirar dinero")
+   print("3) Depositar dinero")
+   print("4) Cambiar pin")
+   print("0) Salir")
+   op = int(input())
+   match op:
+          case 1:
+              print("Su saldo es:", Saldo)
+          case 2:
+               print("Ingrese monto a retirar: ")
+               opc_retirar=int(input())
+               if Saldo < opc_retirar:
+                       print("El saldo es insuficiente")
+               if Saldo >= opc_retirar:
+                       print("Espere unos segundos y retire su dinero")
+               Saldo = Saldo - opc_retirar
+          case 3:
+               print("Ingrese monto a depositar")
+               opc_depositar=int(input())
+               print("Su nuevo saldo es: ", Saldo+opc_depositar)
+               Saldo = Saldo + opc_depositar
+          case 4:
+               print("Por favor ingrese su contraseña actual")
+               contraseña=int(input())
+               if contraseña != 1213:
+                    print("Error de contraseña. Ingrese nuevamente")
+               if contraseña != 1213:
+                    print("Error de contraseña.")
+                    break
+               print("Ingrese su nueva contraseña")
+               contraseña_nueva=int(input())
+               print("Reingrese nueva contraseña")
+               contraseña_nueva=int(input())
+               if contraseña_nueva!=contraseña:
+                    print("Error de contraseña")
+                    break
+               print("Su contraseña ha sido cambiada con exito")
+          case default:
+             if op >= 5:
+               print("Error. Opcion invalida")
+print("Gracias por operar con nosotros")
